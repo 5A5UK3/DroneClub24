@@ -1,0 +1,779 @@
+[
+    {
+        "id": "cc86d47a92b40c7e",
+        "type": "tab",
+        "label": "Dexi Led ring ",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "08731e1c3dc2779f",
+        "type": "tab",
+        "label": "Dexi Infrared Reciver",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b7bf0474c694a15c",
+        "type": "tab",
+        "label": "Dexi Laser",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3720c8b6186ec5fc",
+        "type": "tab",
+        "label": "Dexi Camera",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "e6e83d34915c5f55",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2a134f00544c9682",
+        "type": "ros2-websocket-server",
+        "url": "ws://192.168.4.1:9090"
+    },
+    {
+        "id": "1fe10311e9d87431",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "bd79af5db77b2154",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "fca5f006f10c1357",
+        "type": "ui_group",
+        "name": "Main",
+        "tab": "1fe10311e9d87431",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "bb598db8d8a350e1",
+        "type": "inject",
+        "z": "cc86d47a92b40c7e",
+        "name": "White",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 290,
+        "y": 120,
+        "wires": [
+            [
+                "ea53a7b4cb83054c"
+            ]
+        ]
+    },
+    {
+        "id": "ea53a7b4cb83054c",
+        "type": "led",
+        "z": "cc86d47a92b40c7e",
+        "name": "",
+        "color": "white",
+        "x": 480,
+        "y": 120,
+        "wires": [
+            [
+                "857037ba21c75b0d"
+            ]
+        ]
+    },
+    {
+        "id": "857037ba21c75b0d",
+        "type": "ros2-service-call",
+        "z": "cc86d47a92b40c7e",
+        "server": "2a134f00544c9682",
+        "x": 700,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6ee2da374512d721",
+        "type": "led",
+        "z": "cc86d47a92b40c7e",
+        "name": "",
+        "color": "red",
+        "x": 480,
+        "y": 180,
+        "wires": [
+            [
+                "857037ba21c75b0d"
+            ]
+        ]
+    },
+    {
+        "id": "a5f77870b8692097",
+        "type": "inject",
+        "z": "cc86d47a92b40c7e",
+        "name": "Red Led",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 300,
+        "y": 180,
+        "wires": [
+            [
+                "6ee2da374512d721"
+            ]
+        ]
+    },
+    {
+        "id": "d784bb0d9d8cbcc7",
+        "type": "led",
+        "z": "cc86d47a92b40c7e",
+        "name": "",
+        "color": "blue",
+        "x": 480,
+        "y": 240,
+        "wires": [
+            [
+                "857037ba21c75b0d"
+            ]
+        ]
+    },
+    {
+        "id": "eba6b155ccf8586d",
+        "type": "inject",
+        "z": "cc86d47a92b40c7e",
+        "name": "Blue Led",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 300,
+        "y": 240,
+        "wires": [
+            [
+                "d784bb0d9d8cbcc7"
+            ]
+        ]
+    },
+    {
+        "id": "77f2fabf73dbd079",
+        "type": "led",
+        "z": "cc86d47a92b40c7e",
+        "name": "",
+        "color": "orange",
+        "x": 480,
+        "y": 300,
+        "wires": [
+            [
+                "857037ba21c75b0d"
+            ]
+        ]
+    },
+    {
+        "id": "8fc5e2ed35927b38",
+        "type": "inject",
+        "z": "cc86d47a92b40c7e",
+        "name": "Orange Led",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 310,
+        "y": 300,
+        "wires": [
+            [
+                "77f2fabf73dbd079"
+            ]
+        ]
+    },
+    {
+        "id": "26dc898a6c879d10",
+        "type": "ui_button",
+        "z": "cc86d47a92b40c7e",
+        "name": "",
+        "group": "fca5f006f10c1357",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "White",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 170,
+        "y": 80,
+        "wires": [
+            [
+                "ea53a7b4cb83054c"
+            ]
+        ]
+    },
+    {
+        "id": "88957b34978961b1",
+        "type": "ui_button",
+        "z": "cc86d47a92b40c7e",
+        "name": "",
+        "group": "fca5f006f10c1357",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Red",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 170,
+        "y": 160,
+        "wires": [
+            [
+                "6ee2da374512d721"
+            ]
+        ]
+    },
+    {
+        "id": "3ccbf94a6268716f",
+        "type": "ui_button",
+        "z": "cc86d47a92b40c7e",
+        "name": "",
+        "group": "fca5f006f10c1357",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Blue",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 170,
+        "y": 200,
+        "wires": [
+            [
+                "d784bb0d9d8cbcc7"
+            ]
+        ]
+    },
+    {
+        "id": "65805e3f7030fda7",
+        "type": "ui_button",
+        "z": "cc86d47a92b40c7e",
+        "name": "",
+        "group": "fca5f006f10c1357",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Orange",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 160,
+        "y": 280,
+        "wires": [
+            [
+                "77f2fabf73dbd079"
+            ]
+        ]
+    },
+    {
+        "id": "7b7c347b801ef383",
+        "type": "ros2-subscribe",
+        "z": "08731e1c3dc2779f",
+        "server": "2a134f00544c9682",
+        "topicname": "/dexi/gpio_input_22",
+        "messagetype": "",
+        "x": 130,
+        "y": 60,
+        "wires": [
+            [
+                "6998646eda56caba"
+            ]
+        ]
+    },
+    {
+        "id": "6998646eda56caba",
+        "type": "change",
+        "z": "08731e1c3dc2779f",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.data",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 380,
+        "y": 60,
+        "wires": [
+            [
+                "13d15063e2851150"
+            ]
+        ]
+    },
+    {
+        "id": "13d15063e2851150",
+        "type": "ui_led",
+        "z": "08731e1c3dc2779f",
+        "order": 6,
+        "group": "fca5f006f10c1357",
+        "width": "6",
+        "height": "5",
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "false",
+                "valueType": "bool"
+            },
+            {
+                "color": "#008000",
+                "value": "true",
+                "valueType": "bool"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 610,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "efae6e2a94fe5aa7",
+        "type": "ui_button",
+        "z": "b7bf0474c694a15c",
+        "name": "",
+        "group": "fca5f006f10c1357",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Laser on ",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 340,
+        "y": 180,
+        "wires": [
+            [
+                "b79a4035d6cda0ce"
+            ]
+        ]
+    },
+    {
+        "id": "3f8397a5efe5c58a",
+        "type": "ui_button",
+        "z": "b7bf0474c694a15c",
+        "name": "",
+        "group": "fca5f006f10c1357",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Laser off",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 340,
+        "y": 260,
+        "wires": [
+            [
+                "dce0a564ce01ea6b"
+            ]
+        ]
+    },
+    {
+        "id": "b79a4035d6cda0ce",
+        "type": "write-gpio",
+        "z": "b7bf0474c694a15c",
+        "pinnumber": 21,
+        "pinstate": "true",
+        "stampheader": false,
+        "x": 560,
+        "y": 180,
+        "wires": [
+            [
+                "d5a9334cc74bc780"
+            ]
+        ]
+    },
+    {
+        "id": "dce0a564ce01ea6b",
+        "type": "write-gpio",
+        "z": "b7bf0474c694a15c",
+        "pinnumber": 21,
+        "pinstate": "false",
+        "stampheader": false,
+        "x": 560,
+        "y": 240,
+        "wires": [
+            [
+                "d5a9334cc74bc780"
+            ]
+        ]
+    },
+    {
+        "id": "d5a9334cc74bc780",
+        "type": "ros2-service-call",
+        "z": "b7bf0474c694a15c",
+        "server": "2a134f00544c9682",
+        "x": 760,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "12c342414ad59832",
+        "type": "switch",
+        "z": "3720c8b6186ec5fc",
+        "name": "",
+        "property": "payload.detections[0].id",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "2",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "3",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "4",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "5",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "6",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 6,
+        "x": 410,
+        "y": 200,
+        "wires": [
+            [
+                "a0f7414a31335452"
+            ],
+            [
+                "b6d1d39bc393cdbf"
+            ],
+            [
+                "3cc6615324b8b196"
+            ],
+            [
+                "a0f7414a31335452"
+            ],
+            [
+                "b6d1d39bc393cdbf"
+            ],
+            [
+                "3cc6615324b8b196"
+            ]
+        ]
+    },
+    {
+        "id": "e16ccece7b930b3a",
+        "type": "ros2-subscribe",
+        "z": "3720c8b6186ec5fc",
+        "server": "2a134f00544c9682",
+        "topicname": "/throttled/detections",
+        "messagetype": "",
+        "x": 130,
+        "y": 220,
+        "wires": [
+            [
+                "12c342414ad59832"
+            ]
+        ]
+    },
+    {
+        "id": "5cce4db8c614ae93",
+        "type": "ros2-service-call",
+        "z": "3720c8b6186ec5fc",
+        "server": "2a134f00544c9682",
+        "x": 820,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3cc6615324b8b196",
+        "type": "led",
+        "z": "3720c8b6186ec5fc",
+        "name": "Yellow",
+        "color": "yellow",
+        "x": 630,
+        "y": 320,
+        "wires": [
+            [
+                "5cce4db8c614ae93"
+            ]
+        ]
+    },
+    {
+        "id": "b6d1d39bc393cdbf",
+        "type": "led",
+        "z": "3720c8b6186ec5fc",
+        "name": "Blue",
+        "color": "blue",
+        "x": 630,
+        "y": 200,
+        "wires": [
+            [
+                "5cce4db8c614ae93"
+            ]
+        ]
+    },
+    {
+        "id": "a0f7414a31335452",
+        "type": "led",
+        "z": "3720c8b6186ec5fc",
+        "name": "RED",
+        "color": "red",
+        "x": 650,
+        "y": 80,
+        "wires": [
+            [
+                "5cce4db8c614ae93"
+            ]
+        ]
+    },
+    {
+        "id": "0113fb9c11a861c5",
+        "type": "function",
+        "z": "e6e83d34915c5f55",
+        "name": "function 1",
+        "func": "flow.",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 1,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    }
+]
